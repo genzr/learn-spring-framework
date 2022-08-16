@@ -1,18 +1,24 @@
 package com.in28minutes.learnspringframework.game;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
 
-    private MarioGame game;
-    public GameRunner(MarioGame game) {
-        this.game = game;
+    @Autowired
+    private final GamingConsole gc;
+
+    public GameRunner(GamingConsole gc) {
+        this.gc = gc;
     }
 
     public void runGame() {
-        game.up();
-        game.down();
-        game.left();
-        game.right();
-        game.right();
+        gc.up();
+        gc.down();
+        gc.left();
+        gc.right();
+        gc.right();
     }
 
 }
